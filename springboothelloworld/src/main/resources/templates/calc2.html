@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{bootstrap.css}"
+          href="../../bootstrap.css" />
+</head>
+<body>
+<div th:insert="~{nav :: navbar}"></div>
+<blockquote class="blockquote text-center">
+<h1>Form</h1>
+<form action="#" th:action="@{/calc2}" th:object="${calculator}" method="post">
+    <p>a: <input type="text" th:field="*{a}" /></p>
+    <p>b: <input type="text" th:field="*{b}" /></p>
+    <p><input type="submit" value="Submit" /></p>
+    <p th:text="'Result: '+${calculator.getA()+calculator.getB()}"></p>
+</blockquote>
+</form>
+</body>
+</html>
